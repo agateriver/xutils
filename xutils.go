@@ -1,4 +1,4 @@
-package github.com/agaterviver/xutils
+package xutils
 
 import (
 	"github.com/deckarep/golang-set"
