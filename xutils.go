@@ -1,8 +1,10 @@
 package xutils
 
 import (
-	"github.com/deckarep/golang-set"
 	"os"
+	"errors"
+	"fmt"
+	"github.com/deckarep/golang-set"
 )
 
 // IsFileExists if file exists, return true, otherwise false and err
@@ -12,7 +14,7 @@ func IsFileExists(file string) (bool, error) {
 		return false, err
 	}
 	if fi != nil && fi.IsDir() {
-		return false, Errorf("%v cannot be directory.", file)
+		return false, errors.New(fmt.Sprintf("%v cannot be directory.", file))
 	}
 	return true, nil
 }
